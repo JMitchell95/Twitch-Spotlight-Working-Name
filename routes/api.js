@@ -2,8 +2,8 @@
 const db = require('../models')
 
 module.exports = (app) => {
-  app.get('/api/workouts', (req,res) => {
-    db.Workout.find({}, (err, workouts) => {
+  app.get('/api/streamers', (req,res) => {
+    db.Workout.find({}, (err, streamers) => {
     // .then(data => {res.json(data)})
     // .catch(err => {
     //   console.log(err)
@@ -11,12 +11,12 @@ module.exports = (app) => {
     if (err) {
       console.log(err);
     } else {
-      res.json(workouts)
+      res.json(streamers)
     };
     })
   });
 
-  app.post('/api/workouts', (req,res) => {
+  app.post('/api/streamers', (req,res) => {
     db.Workout.create({})
     .then(data => res.json(data))
     .catch(err => {
@@ -24,7 +24,7 @@ module.exports = (app) => {
     })
   });
 
-  app.put('/api/workouts/:id', ({body, params} ,res) => {
+  app.put('/api/streamers/:id', ({body, params} ,res) => {
     // db.Workout.findOneAndUpdate(
       // {_id: params.id}
     // )
