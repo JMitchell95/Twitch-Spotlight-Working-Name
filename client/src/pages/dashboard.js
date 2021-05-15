@@ -10,7 +10,7 @@ function Dashboard() {
 
         <Container fluid>
             <Row>
-                <Col>
+                <Col size = "md-12">
                     <Jumbotron>
                         <h1> DASHBOARD </h1>
                          
