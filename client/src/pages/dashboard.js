@@ -3,6 +3,7 @@ import Jumbotron  from "../components/Jumbotron";
 import {Link} from "react-router-dom";
 import {Col, Row, Container} from "../components/Grid";
 import Button from "../components/Button";
+import Card from "../components/Card";
 
 function Dashboard() {
     return(
@@ -22,16 +23,16 @@ function Dashboard() {
             <Row>
                 <h1> BUTTONS IN PROGRESS GO HERE</h1>
                 <Col size = "md-3">
-                <Button />
+                <Card />
                 </Col>
                 <Col size = "md-3">
-                <Button />
+                <Card />
                 </Col>
                 <Col size = "md-3">
-                <Button />
+                <Card />
                 </Col>
                 <Col size = "md-3">
-                <Button />
+                <Card />
                 </Col>
 
             </Row>

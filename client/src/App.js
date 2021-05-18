@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Dashboard from "./pages/dashboard";
 import Selection from "./pages/selection";
 import UserPage from "./pages/userPage";
+import FormPage from "./pages/formpage";
 
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" component={Dashboard} />
           <Route exact path="/selection" component={Selection} />
           <Route exact path="/userpage" component={UserPage} />
+          <Route exact path="/login" component= {FormPage} />
         </Switch>
 
 
