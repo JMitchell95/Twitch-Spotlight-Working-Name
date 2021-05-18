@@ -1,5 +1,4 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Nav() {
@@ -7,7 +6,7 @@ function Nav() {
 
         <nav className="navbar navbar=expand-lg navbar-dark bg-primary">
             <a classname="navbar-brand" href="/" >
-                DASHBOARD
+                 Twitch Spotlight DASHBOARD
             </a>
         </nav>
     );
