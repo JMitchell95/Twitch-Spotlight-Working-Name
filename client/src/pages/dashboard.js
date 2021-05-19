@@ -8,14 +8,11 @@ import Card from "../components/Card";
 function Dashboard() {
     return(
 
-        
-
         <Container fluid>
             <Row>
                 <Col size = "md-12">
                     <Jumbotron>
                         <h1> DASHBOARD </h1>
-                         
                     </Jumbotron>
                         
                 </Col>

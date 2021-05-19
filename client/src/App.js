@@ -20,9 +20,7 @@ function App() {
           <Route exact path="/userpage" component={UserPage} />
           <Route exact path="/login" component= {FormPage} />
         </Switch>
-
-
-    </div>
+      </div>
     </Router>
   );
 }
