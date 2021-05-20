@@ -6,5 +6,5 @@ module.exports = (app) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
-}
+};
 // module.exports = router;
