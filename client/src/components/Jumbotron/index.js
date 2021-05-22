@@ -12,7 +12,7 @@ async function getAll(pages) {
 
 const Jumbotron = ({ children }) => {
 
-  console.log(getAll(1))
+  console.log(getAll(1));
 
   return (
     <div

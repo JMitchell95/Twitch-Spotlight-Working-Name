@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {Col, Row, Container} from "../components/Grid";
 import Button from "../components/Button";
 import Card from "../components/Card";
+import Search from "../components/SearchForm/search"
 
 function Dashboard() {
     return(
@@ -13,6 +14,7 @@ function Dashboard() {
                 <Col size = "md-12">
                     <Jumbotron>
                         <h1> DASHBOARD </h1>
+                        <Search />
                     </Jumbotron>
                         
                 </Col>
