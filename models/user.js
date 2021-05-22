@@ -16,6 +16,10 @@ const UserSchema = new Schema ({
     required: "Password is Required",
     validate: [({ length }) => length >= 6, "Password should be longer."]
   },
+  games: {
+    type: String,
+    trim: true
+  }
   
 });
 
