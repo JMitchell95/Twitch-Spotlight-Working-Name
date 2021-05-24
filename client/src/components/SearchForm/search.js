@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { apiClient } from "../../utils/API.js";
+require('dotenv').config();
+
 
 
 function Search() {
-  const [searchState, setSearchState] = useState({
+  async function isStreamLive(userName) {
+    const user = await apiClient.helix.users.getUserByName(userName);
+    if (!user) {
+      return false;
+    }
+    return await apiClient.helix.streams.getStreamByUserId(user.id) !== null;
+  }
+  
+  // const [searchState, setSearchState] = useState({
     
-  });
+  // });
+    
+  //   useEffect(() => {
+  //     fetch("/streams")
+  //   });
+
 
   return(
 <select class="form-select" aria-label="Default select example">

@@ -6,12 +6,12 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 // const db = require("./backend/models");
 const dbConfig = require("./backend/config/db.config");
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 
 
 var corsOptions = {
-  origin: "http://localhost:3000"
+  origin: "http://localhost:3001"
 };
 
 
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 mongoose
-  .connect(process.env.MONGODB_URI || `mongodb://${dbConfig.HOST}/${dbConfig.DB}`, {
+  .connect(process.env.MONGODB_URI || `mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -47,6 +47,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 };
 // Define API routes here
+require("./backend/routes/auth.routes")(app);
+require("./backend/routes/user.routes")(app);
 
 // Send every other request to the React app
 // Define any API routes before this runs
