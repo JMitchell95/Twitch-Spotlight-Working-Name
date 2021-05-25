@@ -16,10 +16,15 @@ const UserSchema = new Schema ({
     required: "Password is Required",
     validate: [({ length }) => length >= 6, "Password should be longer."]
   },
+
+  savedCategroies:{
+    type: String,
+    trim: true,
+  }
   
 });
 
-UserSchema.pre(save, function(next) {
+UserSchema.pre("save", function(next) {
   var user = this;
 
 if (!user.isModified('password')) return next();
@@ -45,4 +50,6 @@ UserSchema.methods.comparePassword = function(candidatePassword, cb) {
   });
 };
 
-module.exports = mongoose.model(User, UserSchema);
+const User = mongoose.model("User" , UserSchema);
+
+module.exports = User;

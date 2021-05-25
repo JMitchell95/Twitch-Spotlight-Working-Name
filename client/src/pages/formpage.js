@@ -1,7 +1,6 @@
 import React from "react";
 import {Col, Row, Container} from "../components/Grid";
-import FormEventLogin from "../components/LogInForm"; 
-import FormEventRegister from "../components/RegisterForm";
+import SignupLogin from "../components/RegisterForm";
 
 function FormPage() {
 
@@ -9,12 +8,7 @@ function FormPage() {
         <Container fluid>
             <Row>
                 <Col size="md-6">
-                    <FormEventLogin />
-                </Col>
-            </Row>
-            <Row>
-                <Col size="md-6">
-                    <FormEventRegister />
+                    <SignupLogin />
                 </Col>
             </Row>
         </Container>

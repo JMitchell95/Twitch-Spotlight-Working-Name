@@ -5,12 +5,12 @@ function Card() {
 
     <div class="card" >
 
-        <img class="card-img-top" src="..." />
+        <img class="card-img-top" /* Thumbnail Tag from api object*/  alt="Pretty"/>
         <div class="card-body">
         <h5 class="card-title">Channel  Name </h5>
-        <p class="card-text">Stream Tags (Making Clickable)</p>
-        <p class="card-text">viewer Count: (Making Clickable)</p>
-        <a href="#" class="btn btn-primary">Go to Stream!</a>
+        <p class="card-text">Stream Tags: (Making Clickable)</p>
+        <p class="card-text">Viewer Count: (Import Object)</p>
+        <a  /* href link to channel*/ class="btn btn-primary">Go to Stream!</a>
         </div>
     </div>
        

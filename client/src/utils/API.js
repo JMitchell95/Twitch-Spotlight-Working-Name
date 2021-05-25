@@ -1,11 +1,27 @@
 import axios from "axios";
 
-// const BASEURL = "https://api.giphy.com/v1/gifs/search?q=";
-// const APIKEY = "&api_key=dc6zaTOxFJmzC&limit=20";
+export default {
+    // Get's Users
+    getUser: function() {
+      return axios.get("/api/user");
+    },
+    // Get's User Categories
+    getCategory: function(userData) {
+      return axios.get("/api/user/", userData);
+    },
 
-// // Export an object with a "search" method that searches the Giphy API for the passed query
-// export default {
-//   search: function(query) {
-//     return axios.get(BASEURL + query + APIKEY);
-//   }
-// };
+    // Saves a categories to user to the database
+    saveCategory: function(userData) {
+      return axios.post("/api/user", userData);
+    },
+
+    loginUser: function(loginEmail, loginPassword) {
+        return axios.get("/api/user", loginEmail, loginPassword);
+    },
+
+    signUppUser: function(email, password){
+        return axios.post("/api/user", email, password);
+    }
+
+  };
+  
