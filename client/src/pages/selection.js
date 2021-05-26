@@ -4,32 +4,47 @@ import {Link} from "react-router-dom";
 import Button from "../components/Button";
 import {Col, Row, Container} from "../components/Grid";
 import { apiClient } from "../utils/API";
+import Card from "../components/Card";
 
 
 
 class Selection extends Component {
-    constructor(props){
-        super(props);{
-            this.state =({
-                streamer: '',
-                thumbnail: '',
-                gamename: ''
+
+            state = ({
+              streamer: '',
+                url: '',
+                gamename: '',
+                streamtitle: '',
+                viewcount:'',
+                thumbnail: ''
             })
 
-        }
-    };
+        
+    
 
  
-    componentDidMount(){
-        let component = this;
+    componentDidMount(){ 
         const  getStreams = async () =>{
             try{
-            const request =  await apiClient.helix.streams.getStreams();
+    
+            const request =  await apiClient.kraken.streams.getAllStreams(1,100);
+            console.log(request);
              
+                // let streamArray =[].push(request);
+
             this.setState({
-                streamer: request.data
+
+                    streamer: request[85].channel.name,
+                    url: request[85].channel.url,
+                    gamename: request[85].channel.game,
+                    viewcount: request[85].viewers,
+                    streamtitle:request[85].channel.status,
+                    thumbnail: request[85]._data.preview.medium
+                
+
             })
-            console.log(request.data)
+
+                
             }
             catch(err){
                 throw err;
@@ -52,7 +67,15 @@ class Selection extends Component {
         <Row>
             <h1>BUTTONS GO HERE NEED TO BE DYNAMICALLY RENDERED!</h1>
             <Col size="md-3">
-                <Button/>
+
+                    <Card
+                    thumbnail={this.state.thumbnail}
+                    streamer={this.state.streamer}
+                    gamename={this.state.gamename}
+                    viewcount={this.state.viewcount}
+                    url={this.state.thumbnail}
+                    />
+
             </Col>
             <Col size="md-3">
                 <Button/>
