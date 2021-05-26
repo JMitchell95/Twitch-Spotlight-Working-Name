@@ -3,9 +3,6 @@ import { ApiClient } from 'twitch';
 import { AccessToken, RefreshableAuthProvider, StaticAuthProvider } from 'twitch-auth';
 
 require('dotenv').config();
-// const request = require("ajax-request");
-
-
 
 
 
@@ -23,22 +20,6 @@ const authProvider = new RefreshableAuthProvider(
         }
     }
 );
-
-// request({
-
-//     url: 'https://api.twitch.tv/helix/streams/',
-//     method: 'GET',
-//     header: {
-//         'Authorization': 'Bearer 4v0iz3fv75xufomdl29djn1dtko33o',
-//         'Client-Id': 's4fmk8dipzizjyev5rsfk299ddf1a7'
-//     },
-//     success: function(data){
-//         console.log(data)
-//        return data;
-//     },
-    
-    
-// });
 
 export const apiClient = new ApiClient({ authProvider });
 

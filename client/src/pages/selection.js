@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component, useState, useEffect} from "react";
 import Jumbotron  from "../components/Jumbotron";
 import {Link} from "react-router-dom";
 import Button from "../components/Button";
@@ -6,18 +6,39 @@ import {Col, Row, Container} from "../components/Grid";
 import { apiClient } from "../utils/API";
 
 
-function Selection(){
 
+class Selection extends Component {
+    constructor(props){
+        super(props);{
+            this.state =({
+                streamer: '',
+                thumbnail: '',
+                gamename: ''
+            })
 
-    async function getStreams(){
-            const request = apiClient.helix.streams.getStreams();
-            console.log(data[1]._data.viewer_count);
+        }
+    };
+
+ 
+    componentDidMount(){
+        let component = this;
+        const  getStreams = async () =>{
+            try{
+            const request =  await apiClient.helix.streams.getStreams();
+             
+            this.setState({
+                streamer: request.data
+            })
+            console.log(request.data)
+            }
+            catch(err){
+                throw err;
+            }
+        }
+        getStreams();
     }
-
-         getStreams();
-
-    return(
-
+        render(){
+        return (
         <Container fluid>
             <Row>
                 <Col size= "md-12">
@@ -44,8 +65,9 @@ function Selection(){
             </Col>
         </Row>
         </Container>
-
     )
+
+    }
 }
 
 export default Selection;
