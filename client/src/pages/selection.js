@@ -9,12 +9,12 @@ import { apiClient } from "../utils/API";
 function Selection(){
 
 
-    async function getStreams(){
-            const request = apiClient.helix.streams.getStreams();
-            console.log(data[1]._data.viewer_count);
-    }
+    // async function getStreams(){
+    //         const request = apiClient.helix.streams.getStreams();
+    //         console.log(data[1]._data.viewer_count);
+    // }
 
-         getStreams();
+        //  getStreams();
 
     return(
 
