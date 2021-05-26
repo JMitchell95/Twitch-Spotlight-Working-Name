@@ -5,6 +5,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "ajax-request": "^1.2.3",
     "bootstrap": "^5.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
