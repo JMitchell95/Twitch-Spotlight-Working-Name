@@ -3,8 +3,19 @@ import Jumbotron  from "../components/Jumbotron";
 import {Link} from "react-router-dom";
 import Button from "../components/Button";
 import {Col, Row, Container} from "../components/Grid";
+import { apiClient } from "../utils/API";
+
 
 function Selection(){
+
+
+    async function getStreams(){
+            const request = apiClient.helix.streams.getStreams();
+            console.log(data[1]._data.viewer_count);
+    }
+
+         getStreams();
+
     return(
 
         <Container fluid>
