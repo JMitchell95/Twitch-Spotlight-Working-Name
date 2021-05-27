@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const clientId = process.env.REACT_APP_CLIENT_ID; 
 const accessToken = process.env.REACT_APP_ACCESS_TOKEN; 
-const clientSecret = process.env.REACT_APP_CLIEN_SECRET; 
+const clientSecret = process.env.REACT_APP_CLIENT_SECRET; 
 const refreshToken = '999999';
 const authProvider = new RefreshableAuthProvider(
     new StaticAuthProvider(clientId, accessToken),
