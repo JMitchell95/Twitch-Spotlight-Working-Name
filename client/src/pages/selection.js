@@ -1,51 +1,59 @@
-import React from "react";
+import React, { Component} from "react";
 import Jumbotron  from "../components/Jumbotron";
-import {Link} from "react-router-dom";
-import Button from "../components/Button";
 import {Col, Row, Container} from "../components/Grid";
 import { apiClient } from "../utils/API";
+import Card from "../components/Card";
 
 
-function Selection(){
+
+class Dashboard extends Component {
+
+            state = ({ streams:''
+
+            })
+
+        
 
 
-    async function getStreams(){
-            const request = apiClient.helix.streams.getStreams();
-            console.log(data[1]._data.viewer_count);
+ 
+    componentDidMount(){ 
+        const  getStreams = async () =>{
+            try{const request =  await apiClient.kraken.streams.getAllStreams(1,25);
+            console.log(request);
+            return this.setState({streams:request})     
+            }
+            catch(err){
+                throw err;
+            }
+        }
+        getStreams();
     }
-
-         getStreams();
-
-    return(
-
+        render(){
+        return (
+            <div>
         <Container fluid>
             <Row>
-                <Col size= "md-12">
+                <Col size= "lg">
                     <Jumbotron>
-                        <h1>USER SLECT PAGE (WIP)</h1>
+                        <h1>Twitch Spotlight</h1>
+                        <h3>(WIP)</h3>
                     </Jumbotron>
-
                 </Col>
             </Row>
 
+
         <Row>
-            <h1>BUTTONS GO HERE NEED TO BE DYNAMICALLY RENDERED!</h1>
-            <Col size="md-3">
-                <Button/>
-            </Col>
-            <Col size="md-3">
-                <Button/>
-            </Col>
-            <Col size="md-3">
-                <Button/>
-            </Col>
-            <Col size="md-3">
-                <Button/>
-            </Col>
+            <Col size="sm"/>
+                <Col size="sm">  
+                    <Card request = {this.state.streams}/>
+                </Col>
+            <Col size="sm"/>
         </Row>
         </Container>
-
+        </div>
     )
+
+    }
 }
 
-export default Selection;
+export default Dashboard;

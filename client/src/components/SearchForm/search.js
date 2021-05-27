@@ -1,38 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { apiClient } from "../../utils/API.js";
+
 require('dotenv').config();
 
 
 
 function Search() {
-
-  
-//   async function getStreamsByViews(views){
-//     const request = apiClient.helix.streams.getStreams(views);
-//     let vc = 50;
-//     views = vc;
-//     console.log(request);
-//     return request;
-//  }
-
-//  getStreamsByViews();
-
-
-
-
-  // async function isStreamLive(userName) {
-  //   const user = await apiClient.helix.users.getUserByName(userName);
-  //   if (!user) {
-  //     return false;
-  //   }
-  //   return await apiClient.helix.streams.getStreamByUserId(user.views) !== null;
-  // }
-  
-
-
-
-// NEED TO CALL API AND 
-
 
 
   return(

@@ -1,27 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
-import Dashboard from "./pages/dashboard";
-import Selection from "./pages/selection";
-import UserPage from "./pages/userPage";
-import FormPage from "./pages/formpage";
+// import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/selection";
 
+// import UserPage from "./pages/userPage";
+// import FormPage from "./pages/formpage";
 
+  function App(){
 
-function App() {
   return (
-  
-    <Router>
+  <Router>
       <div>
         <Nav />
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route exact path="/selection" component={Selection} />
-          <Route exact path="/userpage" component={UserPage} />
-          <Route exact path="/login" component= {FormPage} />
+          {/* <Route exact path="/selection" component={Selection} /> */}
+          {/* <Route exact path="/userpage" component={UserPage} /> */}
+          {/* <Route exact path="/login" component= {FormPage} /> */}
         </Switch>
       </div>
-    </Router>
+  </Router>
   );
 }
 
