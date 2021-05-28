@@ -8,7 +8,7 @@
 
   <!-- Titled description for grading clarity. Will remove after grading -->
   ## Description
-  This project is the final project in the GA tech coding bootcamp. It is a fullstack MERN application, with an express and mongo backend, and a reactjs front end, all integrated with nodejs. This app would allow a user to be able to go to the dashboard, fill in a desired viewer count range, and be fed a list of streamers within that viewer range. This would help shed light on streamers that are less viewer-fortunate, help balance viewer gap between top streamers and smaller streamers, and promote more variety and uniqueness in available streams.
+  This project is the final project in the GA tech coding bootcamp. It is a fullstack MERN application, with an express and mongo backend, and a reactjs front end, all integrated with nodejs. This app would allow a user to be able to go to the dashboard, fill in a desired viewer count range, and be fed a list of streamers within that viewer range. This would help shed light on streamers that are less viewer-fortunate, help balance viewer gap between top streamers and smaller streamers, and promote more variety and uniqueness in available streams. Currently, the api call does not function properly on the heroku app, which seems to be an issue with heroku billing and not allowing api calls on their end without some premium plan. The api call does work locally, however, as shown in the demo png.
   <br>
 
   ![ReadMe Picture](./client/public/spotlightdemopic.png)
